@@ -21,7 +21,7 @@ def embedding_model():
 
 def main():
     st.set_page_config(page_title="Moleculizer · Evidence workspace", page_icon="🧪", layout="wide")
-    setup_ui("#18385c", "#edf2f8")
+    setup_ui("#0080FE", "#edf2f8")
     st.markdown('''<header class="product-nav"><div class="product-brand"><span class="product-mark" aria-hidden="true">M</span>Moleculizer<span class="product-edition">Evidence workspace</span></div><span class="product-status">RESEARCH EDITION</span></header><div class="product-intro"><div class="eyebrow">MOLECULAR RESEARCH, WITH CONTEXT</div><h1>Evidence at molecular resolution.</h1><p>Explore structures, inspect measurements, and compare the sources behind them.</p></div>''', unsafe_allow_html=True)
     dataset = st.selectbox("Evidence dataset", list(DATASETS), format_func=lambda key: DATASETS[key]["label"], key="dataset")
     preset = DATASETS[dataset]

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="workbench.css"><title>Moleculizer evidence workspace</title></head>
+<body>
+<main class="workbench">
+  <header class="workbench-head"><div><span class="eyebrow">INTERACTIVE EVIDENCE WORKSPACE</span><h2>Molecular landscape</h2><p id="scope"></p></div><span class="snapshot-tag">PUBLIC DATA</span></header>
+  <nav class="view-tabs" aria-label="Evidence views"><button data-view="landscape" aria-pressed="true">Landscape</button><button data-view="measurements" aria-pressed="false">Measurements</button><button data-view="records" aria-pressed="false">Source records</button><select id="endpoint" aria-label="Color by Tox21 endpoint" hidden></select></nav>
+  <div class="explorer">
+    <section class="visualization" aria-label="Interactive molecular chart">
+      <div class="chart-heading"><strong id="chart-title">Structure overview</strong><span id="chart-count"></span></div>
+      <div id="plot-wrap"><svg id="plot" viewBox="0 0 800 400" role="group" aria-label="Select a molecular evidence point to inspect its source"></svg><div id="tooltip" role="status" hidden></div></div>
+      <div id="records" class="record-list" hidden></div>
+      <p id="plot-note" class="note"></p>
+    </section>
+    <aside class="inspector" aria-label="Selected molecular evidence"><span class="eyebrow">SELECTED SOURCE</span><h3 id="selected-name">Select a molecule</h3><span id="selected-match" class="match-label"></span><img id="structure" alt="Selected molecular structure"><strong id="measurement" class="measurement"></strong><dl id="properties"></dl><p id="calculation-note" class="note">Descriptors are calculated with RDKit, not experimental measurements.</p><div class="inspector-actions"><button id="pin" class="primary">Pin to comparison</button><button id="copy">Copy SMILES</button></div><a id="source" target="_blank" rel="noopener noreferrer">Open original source ↗</a><details><summary>Read source evidence</summary><p id="source-text"></p><div id="endpoint-labels"></div><small id="source-id"></small></details><p id="feedback" role="status" aria-live="polite"></p></aside>
+  </div>
+  <section class="comparison" aria-label="Pinned evidence comparison"><div class="comparison-heading"><div><span class="eyebrow">SIDE BY SIDE</span><h3>Comparison tray <span id="pin-count">0 / 3</span></h3></div><button id="export">Export comparison</button></div><div id="tray" class="tray"></div><p class="note">Compare source records, not predictions. Different assay conditions may limit direct comparisons. Pinning does not change retrieval.</p></section>
+</main><script src="workbench.js"></script></body></html>

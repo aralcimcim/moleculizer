@@ -42,6 +42,19 @@ The SMILES field starts with a molecule actually present in your snapshot. Ask a
 
 After that first search, changing the similarity cutoff or **Records to display** updates results immediately, without re-embedding the question. The app shows how many evidence records pass the cutoff; select **All matches** to see them all. The cutoff removes lower-scoring analogues rather than changing the ranking. For example, if the five displayed results all score above 0.76, changing the cutoff from 0.3 to 0.7 can leave those five unchanged. Exact identities always remain. Optional Gemini summaries use at most the first five displayed records.
 
+## Interactive workspace
+
+The main panel is an interactive molecular landscape, not a static chart. Before searching, it displays molecular weight against calculated ring count for the dataset snapshot. After a search, it displays structural similarity against molecular weight. Select a point, or choose a source from **Source records**, to inspect its structure, measurement, descriptors, and exact source text.
+
+- **Measurements** plots Ki on a log10(nM) axis, or the existing ESOL log10(mol/L) target without taking a second logarithm. Tox21 has no scalar measurement chart; its endpoint selector colors screening labels as active, inactive, or missing.
+- **Pin to comparison** collects up to three source records in a side-by-side tray. When pins exist after a search, they define the optional Gemini summary's evidence scope.
+- **Export comparison** downloads the pinned records as JSON. **Export matched evidence** downloads all matching records, not just the chart's first 120 ranked points.
+- **Try a dataset molecule** fills the SMILES field with an actual source molecule. Cutoff and display-count changes continue to update existing searches without re-embedding.
+
+Molecular weight, logP, ring count, hydrogen-bond donor count, and acceptor count are RDKit calculations, not new assay measurements or Chemprop predictions. Coordinates do not establish shared biological activity. Different assay conditions may limit direct comparisons.
+
+The workspace is a local HTML/CSS/JavaScript/SVG Streamlit component, with no external chart library or CDN. The dark blue interface uses locally hosted STIX Two Text for academic headings; the font license is included in `fonts/OFL.txt`.
+
 ## Optional Gemini summaries
 
 ```bash
@@ -109,7 +122,7 @@ Open `http://localhost:8504`. The image builds a starter index for all four data
 
 For optional Gemini summaries, supply credentials at runtime with `docker run --rm --env-file .env -p 8504:8501 moleculizer`. Configure HTTPS, hosting resource limits, and API usage controls on your hosting platform before unrestricted public access. This code does not provision cloud resources.
 
-The interface uses a responsive light theme, larger text, and source cards. Styles and fonts stay local, and native controls retain keyboard navigation and focus indicators.
+The interface uses an academic dark blue theme, an interactive chart, a source inspector, comparison trays, and responsive controls. Styles and fonts stay local.
 
 ## Sources
 

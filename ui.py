@@ -2,13 +2,16 @@
 
 from html import escape
 from pathlib import Path
+import base64
 
 import streamlit as st
 
 
 def setup_ui(accent="#126b62", soft="#e6f3ef"):
     css = Path(__file__).with_name("styles.css").read_text()
-    st.markdown(f"<style>:root {{ --accent: {accent}; --accent-soft: {soft}; }}\n{css}</style>", unsafe_allow_html=True)
+    font = base64.b64encode((Path(__file__).parent / 'fonts' / 'stix-two-text.ttf').read_bytes()).decode()
+    face = "@font-face{font-family:'STIX Two Text';src:url(data:font/ttf;base64," + font + ") format('truetype');font-weight:400 700;font-display:swap;}"
+    st.markdown(f"<style>{face}:root {{ --accent: {accent}; --accent-soft: {soft}; }}\n{css}</style>", unsafe_allow_html=True)
 
 
 def hero(name, eyebrow, description, tags):

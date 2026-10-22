@@ -9,7 +9,9 @@ COPY --chown=app:app build_index.py evidence.py datasets.py ./
 USER app
 ARG INDEX_LIMIT=100
 RUN python build_index.py --dataset all --limit "$INDEX_LIMIT"
-COPY --chown=app:app app.py rag.py ui.py styles.css ./
+COPY --chown=app:app app.py rag.py ui.py styles.css workbench.py ./
+COPY --chown=app:app molecular_workbench molecular_workbench
+COPY --chown=app:app fonts fonts
 COPY --chown=app:app .streamlit .streamlit
 USER root
 RUN apt-get update && apt-get install -y --no-install-recommends libxrender1 libxext6 libsm6 libexpat1 && rm -rf /var/lib/apt/lists/*

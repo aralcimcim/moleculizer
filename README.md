@@ -61,10 +61,6 @@ The workspace is a local HTML/CSS/JavaScript/SVG Streamlit component, with no ex
 cp .env.example .env
 ```
 
-Put your own key in `.env`, never in source code or Git. Change `GEMINI_MODEL` if necessary. No key is copied from your other projects.
-
-Check the Google processing terms and billing requirements before using the API. Only clicking **Summarize evidence**, with consent selected, sends your question, SMILES, and the retrieved records to Gemini. Retrieval and molecule drawings remain local. This app is for local development; it does not include the access and rate-limit controls needed before public hosting.
-
 ## Retrieval design
 
 1. Validate SMILES and create a canonical, stereochemistry-preserving representation using RDKit.
@@ -103,31 +99,6 @@ Generated claims must cite retrieved activity IDs and exact quotations. The code
 
 A separate labelled development set uses frozen records from all four datasets. On 8 compound-name/identifier text lookups, supporting evidence appeared in the top five for **2/8 questions with Combined ranking (25%)**, versus **5/8 with Text only (62.5%)**. Eight exact-SMILES controls scored 8/8 in both modes; those controls do not establish semantic quality. Questions were authored by the coding assistant and need independent review. See [the evaluation protocol, labels, misses, and rerun instructions](evaluation/README.md). These are small development results, not a validated benchmark.
 
-## Tests
-
-```bash
-python -m unittest discover -s tests -v
-```
-
-Tests use small controlled examples and mocked embeddings/model responses. They do not establish scientific accuracy or benchmark retrieval quality.
-
-## Next steps
-
-Independently review the initial evaluation labels and add a held-out set of analogue-discovery questions before tuning retrieval. Later, integrate a compatible trained Chemprop checkpoint as a separate prediction panel. Keep predictions and experimental records distinct, and exclude held-out labels from retrieval if evaluating predictive performance.
-
-## Container deployment
-
-```bash
-docker build -t moleculizer .
-docker run --rm -p 8504:8501 moleculizer
-```
-
-Open `http://localhost:8504`. The image builds a starter index for all four datasets and includes the CPU embedding model. It runs as a non-root user with a health endpoint at `/_stcore/health`. Building requires internet access. Rebuild to refresh source snapshots. `.env`, existing local indexes, and secrets are excluded from the build context.
-
-For optional Gemini summaries, supply credentials at runtime with `docker run --rm --env-file .env -p 8504:8501 moleculizer`. Configure HTTPS, hosting resource limits, and API usage controls on your hosting platform before unrestricted public access. This code does not provision cloud resources.
-
-The interface uses an academic dark blue theme, an interactive chart, a source inspector, comparison trays, and responsive controls. Styles and fonts stay local.
-
 ## Sources
 
 - [ChEMBL API](https://www.ebi.ac.uk/chembl/api/data/docs)
@@ -137,5 +108,3 @@ The interface uses an academic dark blue theme, an interactive chart, a source i
 - [MoleculeNet](https://moleculenet.org/)
 - [Tox21 CSV distributed by DeepChem](https://deepchemdata.s3-us-west-1.amazonaws.com/datasets/tox21.csv.gz)
 - [ESOL CSV distributed by DeepChem](https://deepchemdata.s3-us-west-1.amazonaws.com/datasets/delaney-processed.csv)
-
-Source datasets and third-party code/model weights retain their respective licenses and attribution requirements. Preserve source identifiers, URLs, and version information when sharing derived evidence.

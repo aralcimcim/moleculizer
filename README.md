@@ -99,6 +99,10 @@ Generated claims must cite retrieved activity IDs and exact quotations. The code
 - This version retrieves structured dataset records and source links, not full research papers.
 - No clinical recommendations or calibrated predictions are provided.
 
+## Retrieval evaluation
+
+A separate labelled development set uses frozen records from all four datasets. On 8 compound-name/identifier text lookups, supporting evidence appeared in the top five for **2/8 questions with Combined ranking (25%)**, versus **5/8 with Text only (62.5%)**. Eight exact-SMILES controls scored 8/8 in both modes; those controls do not establish semantic quality. Questions were authored by the coding assistant and need independent review. See [the evaluation protocol, labels, misses, and rerun instructions](evaluation/README.md). These are small development results, not a validated benchmark.
+
 ## Tests
 
 ```bash
@@ -109,7 +113,7 @@ Tests use small controlled examples and mocked embeddings/model responses. They 
 
 ## Next steps
 
-Create manually labeled evidence questions to compare retrieval methods. Later, integrate a compatible trained Chemprop checkpoint as a separate prediction panel. Keep predictions and experimental records distinct, and exclude held-out labels from retrieval if evaluating predictive performance.
+Independently review the initial evaluation labels and add a held-out set of analogue-discovery questions before tuning retrieval. Later, integrate a compatible trained Chemprop checkpoint as a separate prediction panel. Keep predictions and experimental records distinct, and exclude held-out labels from retrieval if evaluating predictive performance.
 
 ## Container deployment
 

@@ -1,0 +1,226 @@
+[
+  {
+    "id": "M01",
+    "task": "identity_control",
+    "dataset": "androgen-receptor",
+    "question": "What measured androgen-receptor binding affinity is reported for this molecule?",
+    "smiles": "C=CCC1Oc2cccc(OC)c2-c2ccc3c(c21)C(C)=CC(C)(C)N3",
+    "minimum_similarity": 0.3,
+    "relevant_sources": [
+      {
+        "source_id": "184817",
+        "quote": "ChEMBL activity 184817. Molecule: CHEMBL266282. Target: Androgen receptor (CHEMBL1871), Homo sapiens. Assay: CHEMBL809267. Binding affinity towards testosterone receptor Measurement: Ki = 1230.0 nM. Source document: CHEMBL1144889, year 2003."
+      }
+    ]
+  },
+  {
+    "id": "M02",
+    "task": "identity_control",
+    "dataset": "androgen-receptor",
+    "question": "What measured androgen-receptor binding affinity is reported for this molecule?",
+    "smiles": "CC1(C)CCNc2cc3nc(O)cc(C(F)(F)F)c3cc21",
+    "minimum_similarity": 0.3,
+    "relevant_sources": [
+      {
+        "source_id": "224188",
+        "quote": "ChEMBL activity 224188. Molecule: CHEMBL281028. Target: Androgen receptor (CHEMBL1871), Homo sapiens. Assay: CHEMBL648839. Binding affinity to the human androgen receptor (hAR), using [3H]DHT as radioligand in a competitive binding assay Measurement: Ki = 12.0 nM. Source document: CHEMBL1132051, year 1999."
+      }
+    ]
+  },
+  {
+    "id": "M03",
+    "task": "text_lookup",
+    "dataset": "androgen-receptor",
+    "question": "What androgen-receptor Ki measurement are reported for CHEMBL8394?",
+    "smiles": "CCO",
+    "minimum_similarity": 0.0,
+    "relevant_sources": [
+      {
+        "source_id": "199238",
+        "quote": "ChEMBL activity 199238. Molecule: CHEMBL8394. Target: Androgen receptor (CHEMBL1871), Homo sapiens. Assay: CHEMBL809267. Binding affinity towards testosterone receptor Measurement: Ki = 2460.0 nM. Source document: CHEMBL1144889, year 2003."
+      }
+    ]
+  },
+  {
+    "id": "M04",
+    "task": "text_lookup",
+    "dataset": "androgen-receptor",
+    "question": "What androgen-receptor Ki measurement are reported for CHEMBL281028?",
+    "smiles": "CCO",
+    "minimum_similarity": 0.0,
+    "relevant_sources": [
+      {
+        "source_id": "224188",
+        "quote": "ChEMBL activity 224188. Molecule: CHEMBL281028. Target: Androgen receptor (CHEMBL1871), Homo sapiens. Assay: CHEMBL648839. Binding affinity to the human androgen receptor (hAR), using [3H]DHT as radioligand in a competitive binding assay Measurement: Ki = 12.0 nM. Source document: CHEMBL1132051, year 1999."
+      }
+    ]
+  },
+  {
+    "id": "M05",
+    "task": "identity_control",
+    "dataset": "estrogen-receptor",
+    "question": "What measured estrogen-receptor alpha affinity is reported for this molecule?",
+    "smiles": "Oc1ccc2c(c1)CN(c1ccc(OCCN3CCCCC3)cc1)c1c-2ccc2cc(O)ccc12",
+    "minimum_similarity": 0.3,
+    "relevant_sources": [
+      {
+        "source_id": "1026618",
+        "quote": "ChEMBL activity 1026618. Molecule: CHEMBL12987. Target: Estrogen receptor (CHEMBL206), Homo sapiens. Assay: CHEMBL673861. Binding affinity for Estrogen receptor alpha Measurement: Ki = 0.28 nM. Source document: CHEMBL1136730, year 2003."
+      }
+    ]
+  },
+  {
+    "id": "M06",
+    "task": "identity_control",
+    "dataset": "estrogen-receptor",
+    "question": "What measured estrogen-receptor alpha affinity is reported for this molecule?",
+    "smiles": "O=C(c1ccc(OCCN2CCCCC2)cc1)N1c2ccc(O)cc2CCC1c1ccc(O)cc1",
+    "minimum_similarity": 0.3,
+    "relevant_sources": [
+      {
+        "source_id": "160753",
+        "quote": "ChEMBL activity 160753. Molecule: CHEMBL56166. Target: Estrogen receptor (CHEMBL206), Homo sapiens. Assay: CHEMBL682298. Binding affinity for estrogen receptor alpha Measurement: Ki = 88.0 nM. Source document: CHEMBL1136521, year 2003."
+      }
+    ]
+  },
+  {
+    "id": "M07",
+    "task": "text_lookup",
+    "dataset": "estrogen-receptor",
+    "question": "What estrogen-receptor alpha Ki measurement are reported for CHEMBL60538?",
+    "smiles": "CCO",
+    "minimum_similarity": 0.0,
+    "relevant_sources": [
+      {
+        "source_id": "147372",
+        "quote": "ChEMBL activity 147372. Molecule: CHEMBL60538. Target: Estrogen receptor (CHEMBL206), Homo sapiens. Assay: CHEMBL682298. Binding affinity for estrogen receptor alpha Measurement: Ki = 1.7 nM. Source document: CHEMBL1136521, year 2003."
+      }
+    ]
+  },
+  {
+    "id": "M08",
+    "task": "text_lookup",
+    "dataset": "estrogen-receptor",
+    "question": "What estrogen-receptor alpha Ki measurement are reported for CHEMBL56166?",
+    "smiles": "CCO",
+    "minimum_similarity": 0.0,
+    "relevant_sources": [
+      {
+        "source_id": "160753",
+        "quote": "ChEMBL activity 160753. Molecule: CHEMBL56166. Target: Estrogen receptor (CHEMBL206), Homo sapiens. Assay: CHEMBL682298. Binding affinity for estrogen receptor alpha Measurement: Ki = 88.0 nM. Source document: CHEMBL1136521, year 2003."
+      }
+    ]
+  },
+  {
+    "id": "M09",
+    "task": "identity_control",
+    "dataset": "tox21",
+    "question": "Which screening endpoints have missing labels for this molecule?",
+    "smiles": "CCOc1ccc2nc(S(N)(=O)=O)sc2c1",
+    "minimum_similarity": 0.3,
+    "relevant_sources": [
+      {
+        "source_id": "tox21:row:1",
+        "quote": "MoleculeNet Tox21 source data row 1 (header excluded). Molecule: TOX3021. SMILES: CCOc1ccc2nc(S(N)(=O)=O)sc2c1. Endpoint labels: NR-AR: 0 (inactive); NR-AR-LBD: 0 (inactive); NR-AhR: 1 (active); NR-Aromatase: Not reported; NR-ER: Not reported; NR-ER-LBD: 0 (inactive); NR-PPAR-gamma: 0 (inactive); SR-ARE: 1 (active); SR-ATAD5: 0 (inactive); SR-HSE: 0 (inactive); SR-MMP: 0 (inactive); SR-p53: 0 (inactive). 0 = inactive, 1 = active in the dataset screening task; missing is not inactive. Do not interpret these labels as clinical toxicity, safety, or a quantitative binding affinity."
+      }
+    ]
+  },
+  {
+    "id": "M10",
+    "task": "identity_control",
+    "dataset": "tox21",
+    "question": "Which screening endpoints have missing labels for this molecule?",
+    "smiles": "CCCCCCCCCCOCC(O)CN",
+    "minimum_similarity": 0.3,
+    "relevant_sources": [
+      {
+        "source_id": "tox21:row:17",
+        "quote": "MoleculeNet Tox21 source data row 17 (header excluded). Molecule: TOX26529. SMILES: CCCCCCCCCCOCC(O)CN. Endpoint labels: NR-AR: 0 (inactive); NR-AR-LBD: 0 (inactive); NR-AhR: 0 (inactive); NR-Aromatase: Not reported; NR-ER: 0 (inactive); NR-ER-LBD: Not reported; NR-PPAR-gamma: Not reported; SR-ARE: Not reported; SR-ATAD5: Not reported; SR-HSE: 0 (inactive); SR-MMP: Not reported; SR-p53: Not reported. 0 = inactive, 1 = active in the dataset screening task; missing is not inactive. Do not interpret these labels as clinical toxicity, safety, or a quantitative binding affinity."
+      }
+    ]
+  },
+  {
+    "id": "M11",
+    "task": "text_lookup",
+    "dataset": "tox21",
+    "question": "What NR-AhR and SR-p53 screening labels, including any missing values are reported for TOX25238?",
+    "smiles": "CCO",
+    "minimum_similarity": 0.0,
+    "relevant_sources": [
+      {
+        "source_id": "tox21:row:12",
+        "quote": "MoleculeNet Tox21 source data row 12 (header excluded). Molecule: TOX25238. SMILES: O=c1[nH]c(=O)n([C@H]2C[C@H](O)[C@@H](CO)O2)cc1I. Endpoint labels: NR-AR: 0 (inactive); NR-AR-LBD: 0 (inactive); NR-AhR: Not reported; NR-Aromatase: Not reported; NR-ER: 0 (inactive); NR-ER-LBD: 0 (inactive); NR-PPAR-gamma: 0 (inactive); SR-ARE: 0 (inactive); SR-ATAD5: 0 (inactive); SR-HSE: 0 (inactive); SR-MMP: 0 (inactive); SR-p53: 0 (inactive). 0 = inactive, 1 = active in the dataset screening task; missing is not inactive. Do not interpret these labels as clinical toxicity, safety, or a quantitative binding affinity."
+      }
+    ]
+  },
+  {
+    "id": "M12",
+    "task": "text_lookup",
+    "dataset": "tox21",
+    "question": "What NR-AhR and SR-p53 screening labels, including any missing values are reported for TOX26529?",
+    "smiles": "CCO",
+    "minimum_similarity": 0.0,
+    "relevant_sources": [
+      {
+        "source_id": "tox21:row:17",
+        "quote": "MoleculeNet Tox21 source data row 17 (header excluded). Molecule: TOX26529. SMILES: CCCCCCCCCCOCC(O)CN. Endpoint labels: NR-AR: 0 (inactive); NR-AR-LBD: 0 (inactive); NR-AhR: 0 (inactive); NR-Aromatase: Not reported; NR-ER: 0 (inactive); NR-ER-LBD: Not reported; NR-PPAR-gamma: Not reported; SR-ARE: Not reported; SR-ATAD5: Not reported; SR-HSE: 0 (inactive); SR-MMP: Not reported; SR-p53: Not reported. 0 = inactive, 1 = active in the dataset screening task; missing is not inactive. Do not interpret these labels as clinical toxicity, safety, or a quantitative binding affinity."
+      }
+    ]
+  },
+  {
+    "id": "M13",
+    "task": "identity_control",
+    "dataset": "esol",
+    "question": "What measured aqueous solubility is reported for this molecule?",
+    "smiles": "N#CC(OC1OC(COC2OC(CO)C(O)C(O)C2O)C(O)C(O)C1O)c1ccccc1",
+    "minimum_similarity": 0.3,
+    "relevant_sources": [
+      {
+        "source_id": "esol:row:1",
+        "quote": "MoleculeNet ESOL source data row 1 (header excluded). Compound: Amigdalin. SMILES: N#CC(OC1OC(COC2OC(CO)C(O)C(O)C2O)C(O)C(O)C1O)c1ccccc1. Measured aqueous solubility: -0.77 log10(mol/L). This is the measured dataset target, not an ESOL model prediction. Measurement conditions are not supplied here."
+      }
+    ]
+  },
+  {
+    "id": "M14",
+    "task": "identity_control",
+    "dataset": "esol",
+    "question": "What measured aqueous solubility is reported for this molecule?",
+    "smiles": "CCC(C)CO",
+    "minimum_similarity": 0.3,
+    "relevant_sources": [
+      {
+        "source_id": "esol:row:17",
+        "quote": "MoleculeNet ESOL source data row 17 (header excluded). Compound: 2-Methylbutanol. SMILES: CCC(C)CO. Measured aqueous solubility: -0.47 log10(mol/L). This is the measured dataset target, not an ESOL model prediction. Measurement conditions are not supplied here."
+      }
+    ]
+  },
+  {
+    "id": "M15",
+    "task": "text_lookup",
+    "dataset": "esol",
+    "question": "What measured water solubility and units are reported for 2-Chloronapthalene?",
+    "smiles": "CCO",
+    "minimum_similarity": 0.0,
+    "relevant_sources": [
+      {
+        "source_id": "esol:row:12",
+        "quote": "MoleculeNet ESOL source data row 12 (header excluded). Compound: 2-Chloronapthalene. SMILES: Clc1ccc2ccccc2c1. Measured aqueous solubility: -4.14 log10(mol/L). This is the measured dataset target, not an ESOL model prediction. Measurement conditions are not supplied here."
+      }
+    ]
+  },
+  {
+    "id": "M16",
+    "task": "text_lookup",
+    "dataset": "esol",
+    "question": "What measured water solubility and units are reported for 2-Methylbutanol?",
+    "smiles": "CCO",
+    "minimum_similarity": 0.0,
+    "relevant_sources": [
+      {
+        "source_id": "esol:row:17",
+        "quote": "MoleculeNet ESOL source data row 17 (header excluded). Compound: 2-Methylbutanol. SMILES: CCC(C)CO. Measured aqueous solubility: -0.47 log10(mol/L). This is the measured dataset target, not an ESOL model prediction. Measurement conditions are not supplied here."
+      }
+    ]
+  }
+]

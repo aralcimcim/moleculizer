@@ -1,0 +1,592 @@
+{
+  "metric": "Hit@5: fraction of questions with at least one labelled supporting passage in the first five results",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "fastembed_version": "0.9.0",
+  "corpus_sha256": "f2bf7e58146095a10cabe4cf31d46b17b7b1ef459cd3bd31f4050d3d65a2105e",
+  "questions_sha256": "7dc0b503ef0845a7049c87aaec7d8667e5cdce97e32552c5255bf7e0246cd976",
+  "corpus_counts": {
+    "androgen-receptor": 30,
+    "estrogen-receptor": 100,
+    "tox21": 100,
+    "esol": 100
+  },
+  "settings": {
+    "top_k": 5,
+    "scope": "Selected dataset",
+    "identity_controls": "Exact SMILES, threshold 0.3",
+    "text_lookups": "Ethanol query SMILES (absent from corpus), threshold 0.0; all records eligible",
+    "ranking": "Unmodified production retrieve(); exact identities first in both modes"
+  },
+  "summary": {
+    "identity_control / Combined": {
+      "questions": 8,
+      "hits": 8,
+      "hit_at_5": 1.0
+    },
+    "identity_control / Text only": {
+      "questions": 8,
+      "hits": 8,
+      "hit_at_5": 1.0
+    },
+    "text_lookup / Combined": {
+      "questions": 8,
+      "hits": 2,
+      "hit_at_5": 0.25
+    },
+    "text_lookup / Text only": {
+      "questions": 8,
+      "hits": 5,
+      "hit_at_5": 0.625
+    }
+  },
+  "cases": [
+    {
+      "id": "M01",
+      "task": "identity_control",
+      "mode": "Combined",
+      "question": "What measured androgen-receptor binding affinity is reported for this molecule?",
+      "support_in_top_5": true,
+      "first_support_rank": 1,
+      "expected_source_ids": [
+        "184817"
+      ],
+      "retrieved_source_ids": [
+        "184817",
+        "213589",
+        "195793",
+        "202922",
+        "200513"
+      ]
+    },
+    {
+      "id": "M01",
+      "task": "identity_control",
+      "mode": "Text only",
+      "question": "What measured androgen-receptor binding affinity is reported for this molecule?",
+      "support_in_top_5": true,
+      "first_support_rank": 1,
+      "expected_source_ids": [
+        "184817"
+      ],
+      "retrieved_source_ids": [
+        "184817",
+        "213589",
+        "200513",
+        "195793",
+        "199238"
+      ]
+    },
+    {
+      "id": "M02",
+      "task": "identity_control",
+      "mode": "Combined",
+      "question": "What measured androgen-receptor binding affinity is reported for this molecule?",
+      "support_in_top_5": true,
+      "first_support_rank": 1,
+      "expected_source_ids": [
+        "224188"
+      ],
+      "retrieved_source_ids": [
+        "224188",
+        "229265",
+        "226728",
+        "234335",
+        "239627"
+      ]
+    },
+    {
+      "id": "M02",
+      "task": "identity_control",
+      "mode": "Text only",
+      "question": "What measured androgen-receptor binding affinity is reported for this molecule?",
+      "support_in_top_5": true,
+      "first_support_rank": 1,
+      "expected_source_ids": [
+        "224188"
+      ],
+      "retrieved_source_ids": [
+        "224188",
+        "229265",
+        "226728",
+        "239627",
+        "233178"
+      ]
+    },
+    {
+      "id": "M03",
+      "task": "text_lookup",
+      "mode": "Combined",
+      "question": "What androgen-receptor Ki measurement are reported for CHEMBL8394?",
+      "support_in_top_5": false,
+      "first_support_rank": null,
+      "expected_source_ids": [
+        "199238"
+      ],
+      "retrieved_source_ids": [
+        "195793",
+        "184817",
+        "194633",
+        "202922",
+        "213589"
+      ]
+    },
+    {
+      "id": "M03",
+      "task": "text_lookup",
+      "mode": "Text only",
+      "question": "What androgen-receptor Ki measurement are reported for CHEMBL8394?",
+      "support_in_top_5": true,
+      "first_support_rank": 1,
+      "expected_source_ids": [
+        "199238"
+      ],
+      "retrieved_source_ids": [
+        "199238",
+        "213589",
+        "195793",
+        "200513",
+        "194633"
+      ]
+    },
+    {
+      "id": "M04",
+      "task": "text_lookup",
+      "mode": "Combined",
+      "question": "What androgen-receptor Ki measurement are reported for CHEMBL281028?",
+      "support_in_top_5": false,
+      "first_support_rank": null,
+      "expected_source_ids": [
+        "224188"
+      ],
+      "retrieved_source_ids": [
+        "195793",
+        "184817",
+        "194633",
+        "202922",
+        "213589"
+      ]
+    },
+    {
+      "id": "M04",
+      "task": "text_lookup",
+      "mode": "Text only",
+      "question": "What androgen-receptor Ki measurement are reported for CHEMBL281028?",
+      "support_in_top_5": false,
+      "first_support_rank": null,
+      "expected_source_ids": [
+        "224188"
+      ],
+      "retrieved_source_ids": [
+        "213589",
+        "195793",
+        "194633",
+        "199238",
+        "202922"
+      ]
+    },
+    {
+      "id": "M05",
+      "task": "identity_control",
+      "mode": "Combined",
+      "question": "What measured estrogen-receptor alpha affinity is reported for this molecule?",
+      "support_in_top_5": true,
+      "first_support_rank": 1,
+      "expected_source_ids": [
+        "1026618"
+      ],
+      "retrieved_source_ids": [
+        "1026618",
+        "181562",
+        "166872",
+        "148587",
+        "158317"
+      ]
+    },
+    {
+      "id": "M05",
+      "task": "identity_control",
+      "mode": "Text only",
+      "question": "What measured estrogen-receptor alpha affinity is reported for this molecule?",
+      "support_in_top_5": true,
+      "first_support_rank": 1,
+      "expected_source_ids": [
+        "1026618"
+      ],
+      "retrieved_source_ids": [
+        "1026618",
+        "147369",
+        "175269",
+        "158317",
+        "154592"
+      ]
+    },
+    {
+      "id": "M06",
+      "task": "identity_control",
+      "mode": "Combined",
+      "question": "What measured estrogen-receptor alpha affinity is reported for this molecule?",
+      "support_in_top_5": true,
+      "first_support_rank": 1,
+      "expected_source_ids": [
+        "160753"
+      ],
+      "retrieved_source_ids": [
+        "160753",
+        "147369",
+        "175269",
+        "181562",
+        "154592"
+      ]
+    },
+    {
+      "id": "M06",
+      "task": "identity_control",
+      "mode": "Text only",
+      "question": "What measured estrogen-receptor alpha affinity is reported for this molecule?",
+      "support_in_top_5": true,
+      "first_support_rank": 1,
+      "expected_source_ids": [
+        "160753"
+      ],
+      "retrieved_source_ids": [
+        "160753",
+        "147369",
+        "175269",
+        "158317",
+        "154592"
+      ]
+    },
+    {
+      "id": "M07",
+      "task": "text_lookup",
+      "mode": "Combined",
+      "question": "What estrogen-receptor alpha Ki measurement are reported for CHEMBL60538?",
+      "support_in_top_5": false,
+      "first_support_rank": null,
+      "expected_source_ids": [
+        "147372"
+      ],
+      "retrieved_source_ids": [
+        "868236",
+        "898633",
+        "872031",
+        "865645",
+        "885456"
+      ]
+    },
+    {
+      "id": "M07",
+      "task": "text_lookup",
+      "mode": "Text only",
+      "question": "What estrogen-receptor alpha Ki measurement are reported for CHEMBL60538?",
+      "support_in_top_5": false,
+      "first_support_rank": null,
+      "expected_source_ids": [
+        "147372"
+      ],
+      "retrieved_source_ids": [
+        "158317",
+        "166872",
+        "898633",
+        "883078",
+        "868236"
+      ]
+    },
+    {
+      "id": "M08",
+      "task": "text_lookup",
+      "mode": "Combined",
+      "question": "What estrogen-receptor alpha Ki measurement are reported for CHEMBL56166?",
+      "support_in_top_5": false,
+      "first_support_rank": null,
+      "expected_source_ids": [
+        "160753"
+      ],
+      "retrieved_source_ids": [
+        "872031",
+        "868236",
+        "898633",
+        "865645",
+        "885456"
+      ]
+    },
+    {
+      "id": "M08",
+      "task": "text_lookup",
+      "mode": "Text only",
+      "question": "What estrogen-receptor alpha Ki measurement are reported for CHEMBL56166?",
+      "support_in_top_5": true,
+      "first_support_rank": 1,
+      "expected_source_ids": [
+        "160753"
+      ],
+      "retrieved_source_ids": [
+        "160753",
+        "166872",
+        "158317",
+        "898633",
+        "154592"
+      ]
+    },
+    {
+      "id": "M09",
+      "task": "identity_control",
+      "mode": "Combined",
+      "question": "Which screening endpoints have missing labels for this molecule?",
+      "support_in_top_5": true,
+      "first_support_rank": 1,
+      "expected_source_ids": [
+        "tox21:row:1"
+      ],
+      "retrieved_source_ids": [
+        "tox21:row:1",
+        "tox21:row:53"
+      ]
+    },
+    {
+      "id": "M09",
+      "task": "identity_control",
+      "mode": "Text only",
+      "question": "Which screening endpoints have missing labels for this molecule?",
+      "support_in_top_5": true,
+      "first_support_rank": 1,
+      "expected_source_ids": [
+        "tox21:row:1"
+      ],
+      "retrieved_source_ids": [
+        "tox21:row:1",
+        "tox21:row:53"
+      ]
+    },
+    {
+      "id": "M10",
+      "task": "identity_control",
+      "mode": "Combined",
+      "question": "Which screening endpoints have missing labels for this molecule?",
+      "support_in_top_5": true,
+      "first_support_rank": 1,
+      "expected_source_ids": [
+        "tox21:row:17"
+      ],
+      "retrieved_source_ids": [
+        "tox21:row:17",
+        "tox21:row:85"
+      ]
+    },
+    {
+      "id": "M10",
+      "task": "identity_control",
+      "mode": "Text only",
+      "question": "Which screening endpoints have missing labels for this molecule?",
+      "support_in_top_5": true,
+      "first_support_rank": 1,
+      "expected_source_ids": [
+        "tox21:row:17"
+      ],
+      "retrieved_source_ids": [
+        "tox21:row:17",
+        "tox21:row:85"
+      ]
+    },
+    {
+      "id": "M11",
+      "task": "text_lookup",
+      "mode": "Combined",
+      "question": "What NR-AhR and SR-p53 screening labels, including any missing values are reported for TOX25238?",
+      "support_in_top_5": false,
+      "first_support_rank": null,
+      "expected_source_ids": [
+        "tox21:row:12"
+      ],
+      "retrieved_source_ids": [
+        "tox21:row:48",
+        "tox21:row:27",
+        "tox21:row:58",
+        "tox21:row:17",
+        "tox21:row:88"
+      ]
+    },
+    {
+      "id": "M11",
+      "task": "text_lookup",
+      "mode": "Text only",
+      "question": "What NR-AhR and SR-p53 screening labels, including any missing values are reported for TOX25238?",
+      "support_in_top_5": false,
+      "first_support_rank": null,
+      "expected_source_ids": [
+        "tox21:row:12"
+      ],
+      "retrieved_source_ids": [
+        "tox21:row:88",
+        "tox21:row:17",
+        "tox21:row:52",
+        "tox21:row:66",
+        "tox21:row:48"
+      ]
+    },
+    {
+      "id": "M12",
+      "task": "text_lookup",
+      "mode": "Combined",
+      "question": "What NR-AhR and SR-p53 screening labels, including any missing values are reported for TOX26529?",
+      "support_in_top_5": true,
+      "first_support_rank": 3,
+      "expected_source_ids": [
+        "tox21:row:17"
+      ],
+      "retrieved_source_ids": [
+        "tox21:row:48",
+        "tox21:row:58",
+        "tox21:row:17",
+        "tox21:row:27",
+        "tox21:row:88"
+      ]
+    },
+    {
+      "id": "M12",
+      "task": "text_lookup",
+      "mode": "Text only",
+      "question": "What NR-AhR and SR-p53 screening labels, including any missing values are reported for TOX26529?",
+      "support_in_top_5": true,
+      "first_support_rank": 2,
+      "expected_source_ids": [
+        "tox21:row:17"
+      ],
+      "retrieved_source_ids": [
+        "tox21:row:88",
+        "tox21:row:17",
+        "tox21:row:66",
+        "tox21:row:52",
+        "tox21:row:76"
+      ]
+    },
+    {
+      "id": "M13",
+      "task": "identity_control",
+      "mode": "Combined",
+      "question": "What measured aqueous solubility is reported for this molecule?",
+      "support_in_top_5": true,
+      "first_support_rank": 1,
+      "expected_source_ids": [
+        "esol:row:1"
+      ],
+      "retrieved_source_ids": [
+        "esol:row:1"
+      ]
+    },
+    {
+      "id": "M13",
+      "task": "identity_control",
+      "mode": "Text only",
+      "question": "What measured aqueous solubility is reported for this molecule?",
+      "support_in_top_5": true,
+      "first_support_rank": 1,
+      "expected_source_ids": [
+        "esol:row:1"
+      ],
+      "retrieved_source_ids": [
+        "esol:row:1"
+      ]
+    },
+    {
+      "id": "M14",
+      "task": "identity_control",
+      "mode": "Combined",
+      "question": "What measured aqueous solubility is reported for this molecule?",
+      "support_in_top_5": true,
+      "first_support_rank": 1,
+      "expected_source_ids": [
+        "esol:row:17"
+      ],
+      "retrieved_source_ids": [
+        "esol:row:17"
+      ]
+    },
+    {
+      "id": "M14",
+      "task": "identity_control",
+      "mode": "Text only",
+      "question": "What measured aqueous solubility is reported for this molecule?",
+      "support_in_top_5": true,
+      "first_support_rank": 1,
+      "expected_source_ids": [
+        "esol:row:17"
+      ],
+      "retrieved_source_ids": [
+        "esol:row:17"
+      ]
+    },
+    {
+      "id": "M15",
+      "task": "text_lookup",
+      "mode": "Combined",
+      "question": "What measured water solubility and units are reported for 2-Chloronapthalene?",
+      "support_in_top_5": false,
+      "first_support_rank": null,
+      "expected_source_ids": [
+        "esol:row:12"
+      ],
+      "retrieved_source_ids": [
+        "esol:row:46",
+        "esol:row:26",
+        "esol:row:20",
+        "esol:row:17",
+        "esol:row:16"
+      ]
+    },
+    {
+      "id": "M15",
+      "task": "text_lookup",
+      "mode": "Text only",
+      "question": "What measured water solubility and units are reported for 2-Chloronapthalene?",
+      "support_in_top_5": true,
+      "first_support_rank": 1,
+      "expected_source_ids": [
+        "esol:row:12"
+      ],
+      "retrieved_source_ids": [
+        "esol:row:12",
+        "esol:row:16",
+        "esol:row:91",
+        "esol:row:93",
+        "esol:row:46"
+      ]
+    },
+    {
+      "id": "M16",
+      "task": "text_lookup",
+      "mode": "Combined",
+      "question": "What measured water solubility and units are reported for 2-Methylbutanol?",
+      "support_in_top_5": true,
+      "first_support_rank": 1,
+      "expected_source_ids": [
+        "esol:row:17"
+      ],
+      "retrieved_source_ids": [
+        "esol:row:17",
+        "esol:row:26",
+        "esol:row:20",
+        "esol:row:46",
+        "esol:row:60"
+      ]
+    },
+    {
+      "id": "M16",
+      "task": "text_lookup",
+      "mode": "Text only",
+      "question": "What measured water solubility and units are reported for 2-Methylbutanol?",
+      "support_in_top_5": true,
+      "first_support_rank": 2,
+      "expected_source_ids": [
+        "esol:row:17"
+      ],
+      "retrieved_source_ids": [
+        "esol:row:56",
+        "esol:row:17",
+        "esol:row:59",
+        "esol:row:35",
+        "esol:row:82"
+      ]
+    }
+  ]
+}

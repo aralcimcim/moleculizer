@@ -74,7 +74,7 @@
   $('copy').onclick=async()=>{const p=find(selected);if(!p)return;try{await navigator.clipboard.writeText(p.smiles);$('feedback').textContent='SMILES copied.';}catch{$('feedback').textContent='Copy this SMILES: '+p.smiles;}resize();};
   document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{view=b.dataset.view;draw();resize();});
   $('endpoint').onchange=()=>{draw();resize();};
-  $('export').onclick=()=>{const data={dataset,source_records:pins.map(find).map(({image,...p})=>p)};const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));const a=element('a');a.href=url;a.download='moleculizer-comparison.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),500);};
+  $('export').onclick=()=>{const data={dataset,source_records:pins.map(find).map(({image,...p})=>p)};const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));const a=element('a');a.href=url;a.download='molescope-comparison.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),500);};
   window.addEventListener('message',event=>{
     if(event.source!==parent||event.data.type!=='streamlit:render')return;
     const a=event.data.args;

@@ -1,4 +1,4 @@
-name: moleculizer
+name: molescope
 channels:
   - defaults
 dependencies:

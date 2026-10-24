@@ -1,4 +1,4 @@
-# Moleculizer
+# Molescope
 
 A molecular evidence RAG prototype connecting structure-based retrieval with semantic search and cited answers.
 
@@ -19,7 +19,7 @@ Each dataset has its own index and is searched separately. Binding affinity, scr
 git clone https://github.com/aralcimcim/moleculizer.git
 cd moleculizer
 conda env create -f environment.yml
-conda activate moleculizer
+conda activate molescope
 python -m pip install -r requirements.txt
 python build_index.py --dataset all --limit 100
 python -m streamlit run app.py

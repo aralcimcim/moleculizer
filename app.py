@@ -1,4 +1,4 @@
-"""Moleculizer: interactive, source-backed molecular evidence workspace."""
+"""Molescope: interactive, source-backed molecular evidence workspace."""
 
 import hashlib
 import json
@@ -20,9 +20,9 @@ def embedding_model():
 
 
 def main():
-    st.set_page_config(page_title="Moleculizer · Evidence workspace", page_icon="🧪", layout="wide")
+    st.set_page_config(page_title="Molescope · Evidence workspace", page_icon="🧪", layout="wide")
     setup_ui("#0080FE", "#edf2f8")
-    st.markdown('''<header class="product-nav"><div class="product-brand"><span class="product-mark" aria-hidden="true">M</span>Moleculizer<span class="product-edition">Evidence workspace</span></div><span class="product-status">RESEARCH EDITION</span></header><div class="product-intro"><div class="eyebrow">MOLECULAR RESEARCH, WITH CONTEXT</div><h1>Evidence at molecular resolution.</h1><p>Explore structures, inspect measurements, and compare the sources behind them.</p></div>''', unsafe_allow_html=True)
+    st.markdown('''<header class="product-nav"><div class="product-brand"><span class="product-mark" aria-hidden="true">M</span>Molescope<span class="product-edition">Evidence workspace</span></div><span class="product-status">RESEARCH EDITION</span></header><div class="product-intro"><div class="eyebrow">MOLECULAR RESEARCH, WITH CONTEXT</div><h1>Evidence at molecular resolution.</h1><p>Explore structures, inspect measurements, and compare the sources behind them.</p></div>''', unsafe_allow_html=True)
     dataset = st.selectbox("Evidence dataset", list(DATASETS), format_func=lambda key: DATASETS[key]["label"], key="dataset")
     preset = DATASETS[dataset]
     path = DB_PATH if dataset == "androgen-receptor" else index_path(dataset)
@@ -150,7 +150,7 @@ def main():
             st.markdown(f"[Original source ↗]({hit['source_url']})")
 
     st.download_button("Export matched evidence (JSON)", json.dumps({"dataset": dataset, "query_smiles": st.session_state.normalized,
-                       "question": question, "records": matches}, indent=2), file_name="moleculizer-evidence.json", mime="application/json")
+                       "question": question, "records": matches}, indent=2), file_name="molescope-evidence.json", mime="application/json")
     pinned = set(st.session_state.get("pinned_ids", []))
     summary_hits = [r for r in matches if source_id(r) in pinned] if pinned else hits[:5]
     section("SYNTHESIS", "Explain the selected evidence", "A source-checked summary that keeps exact matches and analogues distinct.")
@@ -176,7 +176,7 @@ def main():
         st.caption(answer.limitations)
         st.caption("Quotation checks verify source text, not the scientific correctness of an interpretation.")
     st.divider()
-    st.caption("Moleculizer / Molecular evidence workspace · Research use · Review the original source and assay context.")
+    st.caption("Molescope / Molecular evidence workspace · Research use · Review the original source and assay context.")
 
 
 if __name__ == "__main__":

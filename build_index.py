@@ -52,7 +52,7 @@ def fetch_records(limit=100, dataset="androgen-receptor"):
     target_id = preset["target"]
     records = []
     with requests.Session() as session:
-        session.headers["User-Agent"] = "Moleculizer educational evidence explorer"
+        session.headers["User-Agent"] = "Molescope educational evidence explorer"
         target = get_json(session, f"target/{target_id}")
         if target["organism"] != "Homo sapiens" or target["pref_name"].lower() != preset["target_name"].lower():
             raise ValueError("The selected target does not match the expected human receptor.")
